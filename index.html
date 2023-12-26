@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pop_up" id="pointPopUp">
+      <form id="pointForm">
+        <div class="form-group">
+          <label for="x_0">X Coordinate:</label>
+          <input type="number" id="x_0" name="x_0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="y_0">Y Coordinate:</label>
+          <input type="number" id="y_0" name="y_0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="color">Color:</label>
+          <input
+            type="color"
+            id="color"
+            name="color"
+            value="#000000"
+            required
+          />
+        </div>
+
+        <button type="button" id="pointSubmit">Submit</button>
+      </form>
+    </div>
+
+    <div class="pop_up" id="linePopUp">
+      <form id="lineForm">
+        <div class="form-group">
+          <label for="x_0">Start X:</label>
+          <input type="number" id="x_0_line" name="x_0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="y_0">Start Y:</label>
+          <input type="number" id="y_0_line" name="y_0" required />
+        </div>
+
+        <div class="form-group">
+          <label for="x_1">End X:</label>
+          <input type="number" id="x_1_line" name="x_1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="y_1">End Y:</label>
+          <input type="number" id="y_1_line" name="y_1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="color">Color:</label>
+          <input
+            type="color"
+            id="lineColor"
+            name="lineColor"
+            value="#000000"
+            required
+          />
+        </div>
+
+        <button type="button" id="lineSubmit">Submit</button>
+      </form>
+    </div>
+    <div class="pop_up" id="anglePopUp">
+      <div class="pop_up_input">
+        <form id="angleForm">
+          <div class="form-group">
+            <label for="x_0">X Coordinate:</label>
+            <input type="number" id="x_0_angle" name="x_0" required />
+          </div>
+          <div class="form-group">
+            <label for="y_0">Y Coordinate:</label>
+            <input type="number" id="y_0_angle" name="y_0" required />
+          </div>
+          <div class="form-group">
+            <label for="filled">Filled:</label>
+            <select id="filled" name="filled" required>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="color">Color:</label>
+            <input
+              type="color"
+              id="color_angle"
+              name="color"
+              value="#000000"
+              required
+            />
+          </div>
+          <button type="button" id="angleSubmit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="menu">
+      <button class="icon" id="pointButton"><img src="" alt="" /></button>
+      <button class="icon" id="lineButton"><img src="" alt="" /></button>
+      <button class="icon" id="ellipseButton"><img src="" alt="" /></button>
+      <button class="icon" id="rectangleButton"><img src="" alt="" /></button>
+      <button class="icon" id="polygonButton"><img src="" alt="" /></button>
+      <button class="icon" id="removeButton"><img src="" alt="" /></button>
+      <button class="icon" id="clearButton"><img src="" alt="" /></button>
+      <button class="icon" id="showInfoButton"><img src="" alt="" /></button>
+      <button class="icon" id="showButton"><img src="" alt="" /></button>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="main.js"></script>
+  </body>
+</html>
