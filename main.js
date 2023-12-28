@@ -63,7 +63,7 @@ data = [
   new Point(100, 100, "#333"),
   new Line(0, 0, 190, 190, "#333"),
   new Ellipse(300, 300, true, "blue"),
-  new Rectangle(500, 600, true, "#333"),
+  new Rectangle(200, 500, true, "#333"),
   new Polygon(700, 300, true, "green"),
 ];
 
@@ -96,6 +96,8 @@ class Canvas {
 
   clear() {
     console.log("clear");
+    const ctx = this.canvas.getContext("2d");
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
   showInfo() {
@@ -346,3 +348,4 @@ showButton.addEventListener("click", canvas.show.bind(canvas));
 data.forEach((element) => {
   console.log(element.constructor.name);
 });
+
