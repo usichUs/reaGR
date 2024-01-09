@@ -1,4 +1,4 @@
-export function fillForm({name, type, label}) {
+export function fillForm({name, type, label, form}) {
     const field = document.createElement("div");
     field.classList.add("form-group");
 
@@ -16,7 +16,7 @@ export function fillForm({name, type, label}) {
     form.appendChild(field);
 }
 
-export function fillFormFilled({name, option_1, option_2, label}) {
+export function fillFormFilled({name, option_1, option_2, label, form}) {
     const field = document.createElement("div");
     field.classList.add("form-group");
 

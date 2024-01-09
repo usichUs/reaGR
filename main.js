@@ -1,5 +1,3 @@
-import { fillForm } from "./functions";
-import { fillFormFilled } from "./functions";
 //Definitions
 // types:
 // 0 - Point
@@ -20,9 +18,56 @@ showInfoButton = document.getElementById("showInfoButton");
 showButton = document.getElementById("showButton");
 
 //PopUps
-pointPopUp = document.getElementById("pointPopUp");
-linePopUp = document.getElementById("linePopUp");
-anglePopUp = document.getElementById("anglePopUp");
+const pointPopUp = document.getElementById("pointPopUp");
+const linePopUp = document.getElementById("linePopUp");
+const ellipsePopUp = document.getElementById("ellipsePopUp");
+const rectanglePopUp = document.getElementById("rectanglePopUp");
+const polygonPopUp = document.getElementById("polygonPopUp");
+
+
+function fillForm({name, type, label, form}) {
+  const field = document.createElement("div");
+  field.classList.add("form-group");
+
+  const input = document.createElement("input");
+  input.name = name;
+  input.type = type;
+
+  const labelC = document.createElement("label");
+  labelC.for = name;
+  labelC.textContent = `${label}:`;
+
+  field.appendChild(labelC);
+  field.appendChild(input);
+
+  form.appendChild(field);
+}
+
+function fillFormFilled({name, option_1, option_2, label, form}) {
+  const field = document.createElement("div");
+  field.classList.add("form-group");
+
+  const option1 = document.createElement("option");
+  option1.value = true;
+
+  const option2 = document.createElement("option");
+  option2.value = false;
+
+  const select = document.createElement("select");
+  select.name = name;
+
+  const labelC = document.createElement("label");
+  labelC.for = name;
+  labelC.textContent = `${label}:`;
+
+  select.appendChild(option1);
+  select.appendChild(option2);
+
+  field.appendChild(label);
+  field.appendChild(select);
+
+  form.appendChild(field);
+}
 
 class Point {
   constructor(x_0, y_0, color) {
@@ -213,8 +258,14 @@ class Canvas {
               option_1: elem.option_1,
               option_2: elem.option_2,
               label: elem.label,
+              form: form,
             })
-          : fillForm({ name: elem.name, type: elem.type, label: elem.label });
+          : fillForm({
+              name: elem.name,
+              type: elem.type,
+              label: elem.label,
+              form: form,
+            });
       });
 
       const submitButton = document.createElement("button");
@@ -386,7 +437,7 @@ canvas.init(INITIAl_DATA);
 
 //Убрать нахуй потом
 //EventListeners
-pointButton.addEventListener("click", () => canvas.add(0));
+// pointButton.addEventListener("click", () => canvas.add(0));
 // lineButton.addEventListener('click', () => canvas.add(1));
 // ellipseButton.addEventListener("click", () => canvas.add(2));
 // rectangleButton.addEventListener("click", () => canvas.add(3));
